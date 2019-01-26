@@ -1,0 +1,69 @@
+const path = require('path');
+const webpack = require('webpack');
+
+module.exports = {
+  mode: 'development',
+  entry: {
+    app: path.resolve(__dirname, 'src', 'index.tsx'),
+  },
+  devServer: {
+    hot: true,
+    contentBase: path.resolve('dist')
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: 'source-map',
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
+  module: {
+    rules: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      },
+
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        loader: 'source-map-loader'
+      },
+
+      // lint
+      {
+        test: /\.(ts|tsx)$/,
+        enforce: 'pre',
+        use: [
+          {
+            loader: 'tslint-loader',
+            options: {}
+          }
+        ]
+      },
+
+      // style
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      },
+
+      // files
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: "file-loader"
+      },
+    ]
+  },
+};
