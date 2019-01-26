@@ -4,21 +4,21 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
-    app: path.resolve(__dirname, 'src', 'index.tsx'),
+    index: path.resolve(__dirname, 'src', 'index.tsx'),
   },
   devServer: {
-    hot: true,
-    contentBase: path.resolve('dist')
+    contentBase: path.resolve('.'),
+    publicPath: 'http://localhost:8080/dist',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
   // Enable sourcemaps for debugging webpack's output.
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -54,16 +54,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" }
+          { loader: 'style-loader' },
+          { loader: 'css-loader' }
         ]
       },
 
       // files
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: "file-loader"
+        loader: 'file-loader'
       },
     ]
+  },
+  optimization: {
+    usedExports: true,
   },
 };

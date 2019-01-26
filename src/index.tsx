@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 
 import 'typeface-roboto';
 
-// import './bootstrap';
+import './bootstrap';
 import Main from './Main';
 
 ReactDOM.render(<Main />, document.getElementById('root'));
