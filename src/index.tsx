@@ -6,4 +6,4 @@ import 'typeface-roboto';
 import './bootstrap';
 import Main from './Main';
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(<Main key='entrypoint' />, document.getElementById('root'));

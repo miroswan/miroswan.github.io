@@ -12,7 +12,7 @@ import * as React from 'react';
 
 import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 
-import { IState, View } from '../../types';
+import { IRState, View } from '../../types';
 import RExperience from '../../views/RExperience';
 import RHome from '../../views/RHome';
 
