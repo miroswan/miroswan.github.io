@@ -5,6 +5,7 @@ export enum View {
   Experience,
   Technology,
   Contact,
+  NotSupported,
 }
 
 export interface IState {

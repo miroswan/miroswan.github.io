@@ -17,7 +17,7 @@ const styles = createStyles({
 
 export interface IRBackgroundProps extends WithStyles<typeof styles> {}
 
-const RBackground = (props: IRBackgroundProps): JSX.Element => {
+const RBackground: React.SFC<IRBackgroundProps> = (props: IRBackgroundProps): JSX.Element => {
   return (
     <div className={props.classes.root}>
       <Particles className={props.classes.background} width='100vw' height='100vh' params={

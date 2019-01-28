@@ -40,7 +40,7 @@ export interface IRAppBarProps extends WithStyles<typeof styles> {
   setView: (view: View) => void;
 }
 
-const RAppBar = (props: IRAppBarProps): JSX.Element => {
+const RAppBar: React.SFC<IRAppBarProps> = (props: IRAppBarProps): JSX.Element => {
   const [resumeSelected, setResumeSelected] = React.useState(false);
   interface Iroute {
     name: string;

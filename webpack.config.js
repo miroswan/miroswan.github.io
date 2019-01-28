@@ -8,7 +8,8 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve('.'),
-    publicPath: 'http://localhost:8080/dist',
+    publicPath: 'http://0.0.0.0:8080/dist',
+    host: '0.0.0.0'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -59,11 +60,17 @@ module.exports = {
         ]
       },
 
-      // files
+      // font files
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         loader: 'file-loader'
       },
+
+      // svg
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
+     }
     ]
   },
   optimization: {
