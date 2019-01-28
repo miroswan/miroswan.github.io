@@ -6,7 +6,6 @@ const styles = createStyles({
   resumeVideo: {
     minHeight: '100%',
     minWidth: '100%',
-    // position: 'fixed',
   },
 });
 

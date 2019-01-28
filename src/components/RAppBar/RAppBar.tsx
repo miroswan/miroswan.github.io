@@ -12,9 +12,9 @@ import * as React from 'react';
 
 import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 
-import { IState, View } from '../types';
-import RExperience from '../views/RExperience';
-import RHome from '../views/RHome';
+import { IState, View } from '../../types';
+import RExperience from '../../views/RExperience';
+import RHome from '../../views/RHome';
 
 const styles = (theme: Theme) => createStyles({
   appbar: {

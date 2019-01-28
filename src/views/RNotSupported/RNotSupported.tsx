@@ -19,12 +19,12 @@ const styles = createStyles({
   },
 });
 
-export interface INotSupportedProps extends WithStyles<typeof styles> {
+export interface IRNotSupportedProps extends WithStyles<typeof styles> {
   msg: string;
 }
 
-class NotSupported extends React.Component<INotSupportedProps, {}> {
-  constructor(props: INotSupportedProps) {
+class RNotSupported extends React.Component<IRNotSupportedProps, {}> {
+  constructor(props: IRNotSupportedProps) {
     super(props);
   }
 
@@ -74,4 +74,4 @@ class NotSupported extends React.Component<INotSupportedProps, {}> {
   }
 }
 
-export default withStyles(styles)(NotSupported);
+export default withStyles(styles)(RNotSupported);

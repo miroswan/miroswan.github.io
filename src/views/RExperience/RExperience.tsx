@@ -6,11 +6,11 @@ import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import Typography from '@material-ui/core/Typography';
 
-import RBackground from '../components/RBackground';
-import RExperienceItem from '../components/RExperienceItem';
-import { IExperienceItem } from '../components/RExperienceItem';
+import RBackground from '../../components/RBackground';
+import RExperienceItem from '../../components/RExperienceItem';
+import { IRExperienceItem } from '../../components/RExperienceItem';
 
-const experience: IExperienceItem[] = [
+const experience: IRExperienceItem[] = [
   {
     company: 'DigitalOcean',
     positions: [
@@ -156,7 +156,7 @@ const styles = (theme: Theme) => createStyles({
 
 export interface IRExperienceProps extends WithStyles<typeof styles> {}
 
-const experienceItem = (item: IExperienceItem, props: IRExperienceProps): JSX.Element => {
+const experienceItem = (item: IRExperienceItem, props: IRExperienceProps): JSX.Element => {
   return (
     <Grid className={props.classes.paper} item xs={8}>
       <RExperienceItem company={item.company} positions={item.positions} />
@@ -165,7 +165,7 @@ const experienceItem = (item: IExperienceItem, props: IRExperienceProps): JSX.El
 };
 
 const RExperience: React.SFC<IRExperienceProps> = (props: IRExperienceProps): JSX.Element => {
-  const experienceComponents: JSX.Element[] = experience.map((item: IExperienceItem) => {
+  const experienceComponents: JSX.Element[] = experience.map((item: IRExperienceItem) => {
     return experienceItem(item, props);
   });
   return (

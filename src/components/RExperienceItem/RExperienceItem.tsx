@@ -34,12 +34,12 @@ export interface IPosition {
   responsibilities: string[];
 }
 
-export interface IExperienceItem {
+export interface IRExperienceItem {
   company: string;
   positions: IPosition[];
 }
 
-type IRExperienceItemProps = WithStyles<typeof styles> & IExperienceItem;
+export type IRExperienceItemProps = WithStyles<typeof styles> & IRExperienceItem;
 
 const renderPosition = (position: IPosition, classes: any): JSX.Element => {
   const items: JSX.Element[] = position.responsibilities.map((responsibility: string) => {
