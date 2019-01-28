@@ -60,7 +60,13 @@ class NotSupported extends React.Component<INotSupportedProps, {}> {
             </Typography>
           </div>
           <div>
-            <ReactLoading className={this.props.classes.loading} type='bubbles' color='white' height={'50%'} width={'50%'} />
+            <ReactLoading
+              className={this.props.classes.loading}
+              type='bubbles'
+              color='white'
+              height={'50%'}
+              width={'50%'}
+            />
           </div>
         </Grid>
       </Grid>
