@@ -156,17 +156,17 @@ const styles = (theme: Theme) => createStyles({
 
 export interface IRExperienceProps extends WithStyles<typeof styles> {}
 
-const experienceItem = (item: IRExperienceItem, props: IRExperienceProps): JSX.Element => {
+const experienceItem = (key: number, item: IRExperienceItem, props: IRExperienceProps): JSX.Element => {
   return (
-    <Grid className={props.classes.paper} item xs={8}>
+    <Grid key={key} className={props.classes.paper} item xs={8}>
       <RExperienceItem company={item.company} positions={item.positions} />
     </Grid>
   );
 };
 
 const RExperience: React.SFC<IRExperienceProps> = (props: IRExperienceProps): JSX.Element => {
-  const experienceComponents: JSX.Element[] = experience.map((item: IRExperienceItem) => {
-    return experienceItem(item, props);
+  const experienceComponents: JSX.Element[] = experience.map((item: IRExperienceItem, i: number) => {
+    return experienceItem(i, item, props);
   });
   return (
     <div className={props.classes.root}>

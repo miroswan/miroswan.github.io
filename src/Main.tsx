@@ -3,22 +3,23 @@ import * as React from 'react';
 
 import * as MobileDetect from 'mobile-detect';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { createMuiTheme } from '@material-ui/core/styles';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+
 import RAppBar from './components/RAppBar';
 import { IRMainProps, IRState, View } from './types';
 import RExperience from './views/RExperience';
 import RHome from './views/RHome';
 import RNotSupported from './views/RNotSupported';
 
-import withRoot from './utils/withRoot';
-import withTransition from './utils/withTransition';
-
-const setView = (view: View): JSX.Element => {
+const MainView: React.SFC<{ view: View }> = (props: { view: View }): JSX.Element => {
   if (new MobileDetect(window.navigator.userAgent).mobile()) {
     return <RNotSupported msg='Mobile' />;
   } else if (window.navigator.userAgent.includes('MSIE')) {
     return <RNotSupported msg='Internet Explorer' />;
   }
-  switch (view) {
+  switch (props.view) {
     case View.Home:
       return <RHome />;
     case View.Experience:
@@ -30,14 +31,24 @@ const setView = (view: View): JSX.Element => {
 const Main: React.SFC<IRMainProps> = (props: IRMainProps): JSX.Element => {
   const [state, setState] = React.useState({view: View.Home});
 
+  const theme = createMuiTheme({
+    palette: {
+      type: 'dark',
+    },
+    typography: {
+      useNextVariants: true,
+    },
+  });
+
   return (
-    <React.Fragment>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
       <div>
         <RAppBar setView={(view: View) => setState({view})}/>
       </div>
-      {setView(state.view)}
-    </React.Fragment>
+      <MainView view={state.view} />
+    </MuiThemeProvider>
   );
 };
 
-export default withRoot(withTransition(Main));
+export default Main;

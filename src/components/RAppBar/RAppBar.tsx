@@ -52,9 +52,9 @@ const RAppBar: React.SFC<IRAppBarProps> = (props: IRAppBarProps): JSX.Element =>
     { name: 'Home',       view: View.Home },
   ];
 
-  const menuItems = viewMapping.map((route: Iroute) => {
+  const menuItems = viewMapping.map((route: Iroute, i: number) => {
     return (
-      <MenuItem onClick={
+      <MenuItem key={i} onClick={
         () => {
           setResumeSelected(false);
           props.setView(route.view);

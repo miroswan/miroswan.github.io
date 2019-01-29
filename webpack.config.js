@@ -73,7 +73,7 @@ module.exports = {
      }
     ]
   },
-  optimization: {
-    usedExports: true,
-  },
+  // optimization: {
+  //   usedExports: true,
+  // },
 };

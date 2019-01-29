@@ -41,17 +41,17 @@ export interface IRExperienceItem {
 
 export type IRExperienceItemProps = WithStyles<typeof styles> & IRExperienceItem;
 
-const renderPosition = (position: IPosition, classes: any): JSX.Element => {
-  const items: JSX.Element[] = position.responsibilities.map((responsibility: string) => {
+const renderPosition = (key: number, position: IPosition, classes: any): JSX.Element => {
+  const items: JSX.Element[] = position.responsibilities.map((responsibility: string, i: number) => {
     return (
-      <li className={classes.responsibility}>
+      <li key={i} className={classes.responsibility}>
         <Typography variant='body1'>{responsibility}</Typography>
       </li>
     );
   });
 
   return (
-    <div>
+    <div key={key}>
       <div className={classes.position}>
         <Typography variant='subtitle2'>{position.name}</Typography>
       </div>
@@ -70,8 +70,8 @@ const renderDate = (d: Date): string => {
 };
 
 const RExperienceItem: React.SFC<IRExperienceItemProps> = (props: IRExperienceItemProps): JSX.Element => {
-  const positions: JSX.Element[] = props.positions.map((position: IPosition) => {
-    return renderPosition(position, props.classes);
+  const positions: JSX.Element[] = props.positions.map((position: IPosition, i: number) => {
+    return renderPosition(i, position, props.classes);
   });
   return (
     <div className={props.classes.experienceItem}>
