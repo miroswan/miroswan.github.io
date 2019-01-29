@@ -1,10 +1,8 @@
 import * as React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
-import Typography from '@material-ui/core/Typography';
 
 import RBackground from '../../components/RBackground';
 import RExperienceItem from '../../components/RExperienceItem';

@@ -8,10 +8,15 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
 import RAppBar from './components/RAppBar';
-import { IRMainProps, IRState, View } from './types';
+
+import { IRState, View } from './types';
+
 import RExperience from './views/RExperience';
 import RHome from './views/RHome';
 import RNotSupported from './views/RNotSupported';
+import RTechnology from './views/RTechnology';
+
+import withErrorBoundary from './utils/withErrorBoundary';
 
 const MainView: React.SFC<{ view: View }> = (props: { view: View }): JSX.Element => {
   if (new MobileDetect(window.navigator.userAgent).mobile()) {
@@ -24,11 +29,13 @@ const MainView: React.SFC<{ view: View }> = (props: { view: View }): JSX.Element
       return <RHome />;
     case View.Experience:
       return <RExperience />;
+    case View.Technology:
+      return <RTechnology />;
   }
   return <h1>You should never see this </h1>;
 };
 
-const Main: React.SFC<IRMainProps> = (props: IRMainProps): JSX.Element => {
+const Main: React.SFC = (): JSX.Element => {
   const [state, setState] = React.useState({view: View.Home});
 
   const theme = createMuiTheme({
@@ -51,4 +58,4 @@ const Main: React.SFC<IRMainProps> = (props: IRMainProps): JSX.Element => {
   );
 };
 
-export default Main;
+export default withErrorBoundary(Main);

@@ -1,22 +1,17 @@
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import InvertColors from '@material-ui/icons/InvertColors';
 
 import * as React from 'react';
 
 import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 
-import { IRState, View } from '../../types';
-import RExperience from '../../views/RExperience';
-import RHome from '../../views/RHome';
+import {  View } from '../../types';
 
-const styles = (theme: Theme) => createStyles({
+const styles = createStyles({
   appbar: {
     backgroundColor: 'black',
     justifyContent: 'space-between',
@@ -48,8 +43,9 @@ const RAppBar: React.SFC<IRAppBarProps> = (props: IRAppBarProps): JSX.Element =>
   }
 
   const viewMapping: Iroute[] = [
-    { name: 'Experience', view: View.Experience },
     { name: 'Home',       view: View.Home },
+    { name: 'Experience', view: View.Experience },
+    { name: 'Technology', view: View.Technology },
   ];
 
   const menuItems = viewMapping.map((route: Iroute, i: number) => {
@@ -80,7 +76,7 @@ const RAppBar: React.SFC<IRAppBarProps> = (props: IRAppBarProps): JSX.Element =>
           <div id='appBarRight'>
             <Button
               id='ResumeButton'
-              onClick={(event) => setResumeSelected(true)}
+              onClick={(_) => setResumeSelected(true)}
             >
               <Typography className={props.classes.typography} variant='h6'>
                 Resume

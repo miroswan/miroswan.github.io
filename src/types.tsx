@@ -11,7 +11,3 @@ export enum View {
 export interface IRState {
   view: View;
 }
-
-export interface IRMainProps {
-  key: string;
-}
