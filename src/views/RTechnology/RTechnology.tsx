@@ -74,6 +74,7 @@ const styles = createStyles({
   },
   cardContainer: {
     marginBottom: '2%',
+    marginLeft: '1.75em',
     marginRight: '40%',
     marginTop: '2%',
   },

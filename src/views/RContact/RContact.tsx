@@ -10,13 +10,10 @@ import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import RBackground from '../../components/RBackground';
 
 const styles = createStyles({
-  gridContainer: {
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+  container: {
+    marginLeft: '1.75em',
     marginRight: '40%',
-    minHeight: '50vh',
+    marginTop: '1.75em',
   },
   root: {
     flexGrow: 1,
@@ -29,10 +26,10 @@ const RContact: React.SFC<IRContactProps> = (props: IRContactProps): JSX.Element
   return (
     <div className={props.classes.root}>
       <RBackground />
-      <div className={props.classes.gridContainer} >
+      <div className={props.classes.container} >
         <div>
           <Link href='tel:781-731-5511'>
-            <Typography align='center' variant='h5'>
+            <Typography align='left' variant='h5'>
               781.731.5511
             </Typography>
           </Link>
@@ -40,7 +37,7 @@ const RContact: React.SFC<IRContactProps> = (props: IRContactProps): JSX.Element
         <br />
         <div>
           <Link href='mailto: demitriswan@gmail.com'>
-            <Typography align='center' variant='h5'>
+            <Typography align='left' variant='h5'>
               demitriswan at gmail dot com
             </Typography>
           </Link>
