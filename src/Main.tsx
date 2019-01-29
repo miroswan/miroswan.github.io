@@ -11,6 +11,7 @@ import RAppBar from './components/RAppBar';
 
 import { IRState, View } from './types';
 
+import RContact from './views/RContact';
 import RExperience from './views/RExperience';
 import RHome from './views/RHome';
 import RNotSupported from './views/RNotSupported';
@@ -31,6 +32,8 @@ const MainView: React.SFC<{ view: View }> = (props: { view: View }): JSX.Element
       return <RExperience />;
     case View.Technology:
       return <RTechnology />;
+    case View.Contact:
+      return <RContact />;
   }
   return <h1>You should never see this </h1>;
 };

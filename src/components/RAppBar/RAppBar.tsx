@@ -43,9 +43,10 @@ const RAppBar: React.SFC<IRAppBarProps> = (props: IRAppBarProps): JSX.Element =>
   }
 
   const viewMapping: Iroute[] = [
-    { name: 'Home',       view: View.Home },
+    { name: 'Home',       view: View.Home       },
     { name: 'Experience', view: View.Experience },
     { name: 'Technology', view: View.Technology },
+    { name: 'Contact',    view: View.Contact    },
   ];
 
   const menuItems = viewMapping.map((route: Iroute, i: number) => {
