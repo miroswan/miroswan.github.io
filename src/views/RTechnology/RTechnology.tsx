@@ -102,7 +102,7 @@ const RTechnology: React.SFC<IRTechnologyProps> = (props: IRTechnologyProps): JS
             {item.category}
           </Typography>
           <Typography variant='body1' align='center'>
-            {item.items.map((entry: string, x: number) => <li key={x}>{entry}</li>)}
+            {item.items.join(' | ')}
           </Typography>
         </div>
       </Grid>
