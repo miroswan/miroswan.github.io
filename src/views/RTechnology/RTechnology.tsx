@@ -57,7 +57,7 @@ const techList: ICardData[] = [
   {
     category: 'Logging and Metrics',
     image: assetsPath + 'prometheus.png',
-    items: ['Prometheus', 'Grafana', 'Elasticsearch', 'Logstash', 'Kibana', 'Nagios'],
+    items: ['Prometheus', 'Grafana', 'Elasticsearch', 'Rsyslog', 'Logstash', 'Kibana', 'Nagios'],
   },
   {
     category: 'Knowledge Base',
