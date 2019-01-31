@@ -52,7 +52,12 @@ const techList: ICardData[] = [
   {
     category: 'Architecture Components',
     image: assetsPath + 'kafka.png',
-    items: ['Kafka', 'Consul', 'Zookeeper'],
+    items: ['Kafka', 'Consul', 'Zookeeper', 'Cassandra', 'Nginx', 'HAProxy', 'Varnish'],
+  },
+  {
+    category: 'Logging and Metrics',
+    image: assetsPath + 'prometheus.png',
+    items: ['Prometheus', 'Grafana', 'Elasticsearch', 'Logstash', 'Kibana', 'Nagios'],
   },
   {
     category: 'Knowledge Base',
