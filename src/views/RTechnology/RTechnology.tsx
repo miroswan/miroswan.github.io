@@ -64,6 +64,7 @@ const techList: ICardData[] = [
     image: assetsPath + 'algo.png',
     items: [
       'Algorithms - Robert Sedgewick',
+      'Database System Concepts - Abraham Silberschatz',
       'Design Patterns - GoF',
       'Modern Operating Systems - Andrew S. Tanenbaum',
       'Site Reliability Engineering - Google',
